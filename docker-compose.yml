@@ -3,7 +3,7 @@ version: "3.3"
 services:
   # MySQL
   db:
-    container_name: "db"
+    container_name: "dbforget"
     build: ./docker/mysql
     restart: always
     tty: true
@@ -24,8 +24,8 @@ services:
   # FastAPI
   api:
     links:
-      - db
-    container_name: "api"
+      - dbforget
+    container_name: "apiforget"
     build: ./docker/api
     ports:
       - "8000:6050"
