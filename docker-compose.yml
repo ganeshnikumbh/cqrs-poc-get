@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   # MySQL
-  db:
+  dbforget:
     container_name: "dbforget"
     build: ./docker/mysql
     restart: always
@@ -22,7 +22,7 @@ services:
       - local-net
 
   # FastAPI
-  api:
+  apiforget:
     links:
       - dbforget
     container_name: "apiforget"
